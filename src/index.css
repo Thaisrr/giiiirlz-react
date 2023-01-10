@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Quicksand&family=Roboto&display=swap');
+/* Style global
+- sur body, sur les titres
+- varibles CSS
+- imports de font, ect...
+ */
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --secondary-font: 'Quicksand', sans-serif;
+  --title-font: 'Comfortaa', cursive;
+
+  --dark: #264653ff;
+  --primary: #2a9d8fff;
+  --tertiary: #e9c46aff;
+  --secondary: #e76f51ff;
+  --light: white;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  color: var(--dark);
+  font-family: var(--main-font);
+}
+
+h1 {
+  color: var(--secondary);
+  font-family: var(--title-font);
+}
+
+h2 {
+  color: var(--primary);
+  font-family: var(--secondary-font);
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+
