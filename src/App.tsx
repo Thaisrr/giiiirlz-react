@@ -5,6 +5,9 @@ import LeRouteur from "./pages/LeRouteur";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Navigation from "./components/Navigation";
 import NotFound from "./pages/NotFound";
+import Instructions from "./pages/Instructions";
+import Reactivity from "./pages/Reactivity";
+import ReactivityBis from './pages/ReactivityBis';
 
 function App() {
   return (
@@ -13,7 +16,11 @@ function App() {
             <Routes> {/* Ici : injecte les composants en fonction de la route, du chemin dans l'url */}
                 <Route path="/" element={<Presentation/>} />
                 <Route path="/routeur" element={<LeRouteur/>} />
+                <Route path="/instructions" element={<Instructions/>} />
+                <Route path="/reactivity" element={<Reactivity/>} />
+                <Route path='/reactivity-bis' element={<ReactivityBis/>} />
                 <Route path="*" element={<NotFound/>} />
+
             </Routes>
 
             <footer>Dawan | 2023</footer>

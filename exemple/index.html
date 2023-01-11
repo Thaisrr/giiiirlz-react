@@ -8,12 +8,63 @@
 
 <h1 id="title">Bonjour ....</h1>
 
+<p id="count_p"></p>
+<p>
+  <button onclick="increment()">Incrémenter</button>
+</p>
 
 <script>
   const nom = 'Jean Micheline';
 
   const h1 = document.querySelector('#title');
   h1.textContent = 'Bonjour ' + nom;
+
+  let counter = 0;
+  const p = document.querySelector("#count_p");
+  p.textContent = 'Compteur : ' + counter;
+ 
+  function increment() {
+    counter++;
+    console.log('Compteur incrémenté ', counter);
+    p.textContent = 'Compteur : ' + counter;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function doSomething(text) {
+    console.log(text);
+  }
+  
+
+  // Callback
+
+function foreach(arr, callback) {
+    for(let el of arr) {
+      callback(el)
+    }
+}
+
+const fruits = ['peche', 'pomme', 'poire']
+foreach(fruits, (f) => {
+  console.log(f);
+});
+
+foreach(fruits, doSomething);
+
 
 </script>
 </body>
