@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Instructions from "./pages/Instructions";
 import Reactivity from "./pages/Reactivity";
 import ReactivityBis from './pages/ReactivityBis';
+import Props from "./pages/Props";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/instructions" element={<Instructions/>} />
                 <Route path="/reactivity" element={<Reactivity/>} />
                 <Route path='/reactivity-bis' element={<ReactivityBis/>} />
+                <Route path='/props' element={<Props/>} />
                 <Route path="*" element={<NotFound/>} />
 
             </Routes>

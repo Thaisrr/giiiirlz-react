@@ -21,6 +21,9 @@ function Navigation() {
                 <li>
                     <NavLink to='/reactivity-bis'>Again</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/props'>Props</NavLink>
+                </li>
             </ul>
         </nav>
     )
