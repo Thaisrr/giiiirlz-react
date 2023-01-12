@@ -1,4 +1,3 @@
-import {log} from "util";
 
 function request() {
     return new Promise((resolve, reject) => {
@@ -61,7 +60,7 @@ async function getDatas() {
 }
 getDatas(); // asynchrone
 
-
+/*
 fetch('www.monapi.fr/user')
     .then(res => res.json()) // ligne obligatoire pour accéder aux données
     .then(data => console.log(data))
@@ -76,7 +75,7 @@ async function getUsers() {
     }
 }
 
-
+*/
 /**********
  * SOIT -
  *      HTML + Script / fichier JS -> console du navigateur
@@ -97,3 +96,38 @@ async function getUsers() {
  *  => Afficher dans la console "[ Nom de l'utilisateur⋅trice ] : titre du post"
  *
  */
+
+const api_url = 'https://jsonplaceholder.typicode.com';
+
+async function loadUsers() {
+    /*
+    fetch(api_url + '/users')
+        .then(res => res.json())
+        .then(users => console.log(users))
+     */
+
+    const res = await fetch(api_url + '/users');
+    const users = await res.json();
+    console.log(users)
+}
+
+//loadUsers();
+
+
+async function loadUserById(id) {
+    try {
+        const res = await fetch(api_url + '/users/' + id);
+        const user = await res.json();
+        if(!user || !user.id) {
+            console.error('---------- Aucun utilisateur⋅trice à afficher !');
+        } else {
+            console.log(user)
+        }
+    } catch (e) {
+        console.log('TODO : gérer l\'erreur ');
+    }
+}
+
+loadUserById(1);
+loadUserById(2);
+loadUserById(15);
