@@ -1,4 +1,5 @@
 import {Product} from "../types/Product";
+import {MouseEventHandler} from "react";
 
 export function Child(name: string) {
 // Exemple à ne pas utiliser
@@ -69,6 +70,31 @@ export function Child5({product, index, btn_text, action}: Props5) {
             }
             <button onClick={() => action(product)}>{btn_text}</button>
         </div>
+    )
+}
+
+
+export function MyButton({children, click}: {children: string, click: MouseEventHandler}) {
+    return (
+        <button onClick={click}>
+            <span>{children}</span>
+        </button>
+    )
+}
+
+export function Grid({children}: {children: JSX.Element[]}) {
+    return (
+        <div className='grid'>
+            {children}
+        </div>
+    )
+}
+
+export function Dialog({children}: {children: JSX.Element | JSX.Element[]}) {
+    return (
+        <dialog>
+            {children}
+        </dialog>
     )
 }
 

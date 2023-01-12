@@ -1,6 +1,7 @@
-import {Child, Child2, Child3, Child4, Child5} from "../components/Children";
+import {Child, Child2, Child3, Child4, Child5, Dialog, Grid, MyButton} from "../components/Children";
 import {useState} from "react";
 import {Product} from "../types/Product";
+import {log} from "util";
 
 function Props() {
     const [product, setProduct] = useState({
@@ -66,6 +67,20 @@ function Props() {
                         btn_text='Add to Basket'
                     />
                 )}
+
+                <MyButton children='Cliquez ici' click={() => {}}/>
+                <MyButton click={() => console.log('Coucou')}>Cliquez</MyButton>
+
+                <Grid>
+                    <div>Element 1</div>
+                    <div>Element 2</div>
+                    <div>Element 3</div>
+                </Grid>
+
+
+                <Dialog>
+                    <h2>Titre du dialog</h2>
+                </Dialog>
 
             </section>
 
