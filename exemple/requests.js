@@ -86,6 +86,8 @@ async function getUsers() {
  *  Utiliser JSON.placehoder pour afficher dans la console la liste des utilisateurs
  *  Utiliser JSON placeholder pour afficher l'utilisateur ayant l'id 1
  *
+ *  -- 16h30
+ *
  *  Créer une fonction qui permet d'afficher un utilisateur via son id
  *  ( appeler cette fonction avec les ID 1, 5, 20 )
  *  => Si il n'y a pas d'utilisateurs, ou en cas d'erreur afficher "Aucune utilisateur⋅trice trouvé⋅e
