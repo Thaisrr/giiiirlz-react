@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {User} from "../types/User";
+import JokeService from "../utils/joke.service";
 
 function Requests() {
     //let users: any[] = [];
@@ -16,6 +17,8 @@ function Requests() {
     }
 
     console.log('Appel de la fonction Requests');
+
+
 
     /*
     useEffect -> permet d'effectuer une action lors d'un moment du cycle de vie du composant ( création, modification, destruction )
@@ -54,6 +57,21 @@ function Requests() {
     -> Pas d'effet pour les valeurs non surveillées par React ( const bidule = 'value' ) => que des valeurs de Hook
      */
 
+    /******** Exercice Joke *******************/
+
+    const [joke, setJoke] = useState<string>();
+    async function getJoke() {
+      //  const url = 'https://v2.jokeapi.dev/joke/Programming?&type=single&safe-mode&category=programming';
+       // const response = await axios.get<{joke: string}>(url);
+       // setJoke(response.data.joke);
+        const joke = await JokeService.getRandom();
+        setJoke(joke);
+    }
+
+    useEffect(() => {
+        getJoke();
+    }, []);
+
     return (
         <main>
             <h1>Requêtes HTTP</h1>
@@ -82,8 +100,19 @@ function Requests() {
             </section>
             <section>
                 <h2>Joke</h2>
+                {/*
+                1. Fonction -> console.('requete')
+                2. Appeler la fonction à la création du composant
+                3. Dans la fonction, faire la requête -> console.log(reponse)
+                4. Console.log de juste la blague -
+                5. Enregistrer la blague dans une variable pour mettre à jour le JSX et l'afficher
+                */}
 
-                <p>....</p>
+                <p>{joke}</p>
+
+                <p>
+                    <button onClick={() => getJoke()}>Reload</button>
+                </p>
 
             </section>
         </main>
