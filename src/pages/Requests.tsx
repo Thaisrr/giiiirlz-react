@@ -80,6 +80,12 @@ function Requests() {
                     }
                 </div>
             </section>
+            <section>
+                <h2>Joke</h2>
+
+                <p>....</p>
+
+            </section>
         </main>
     )
 }
