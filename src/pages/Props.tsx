@@ -41,6 +41,7 @@ function Props() {
                 {Child('Patate')}
 
                 <Child2 name='Choucroute'/>
+                <Child2 name='Couscous'/>
                 <Child3 name='Cassoulet'
                         description='RPZ le Sud Ouest !'
                         price={13}

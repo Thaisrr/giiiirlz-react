@@ -2,11 +2,13 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import {User} from "../types/User";
 import JokeService from "../utils/joke.service";
+import UserCard from "../components/UserCard";
 
 function Requests() {
     //let users: any[] = [];
     const [users, setUsers] = useState<User[]>([]); // users: any[] = []
     const [counter, setCounter] = useState(0);
+    const [singleUser, setSingleUser] = useState<User>();
     let static_counter = 0;
     async function loadUsers() {
         const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
@@ -17,6 +19,14 @@ function Requests() {
     }
 
     console.log('Appel de la fonction Requests');
+
+    async function getOneUser() {
+        const res = await axios.get<User>('https://jsonplaceholder.typicode.com/users/1')
+        setSingleUser(res.data);
+    }
+    useEffect(() => {
+           getOneUser();
+    }, [])
 
 
 
@@ -88,12 +98,15 @@ function Requests() {
 
                 <p><button onClick={() => loadUsers()}>Charger les données</button></p>
 
+                <UserCard user={ {id: 123, name: 'Toto', email: 'toto.mail.fr', username: 'toto'} } />
+
+                {singleUser && <UserCard user={singleUser} />}
+
+
                 <div className='grid'>
                     {
                         users.map(u => (
-                            <div className='card' key={u.id}>
-                                <h3>{u.name}</h3>
-                            </div>
+                            <UserCard user={u} key={u.id}/>
                         ))
                     }
                 </div>
