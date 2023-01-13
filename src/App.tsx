@@ -9,6 +9,7 @@ import Instructions from "./pages/Instructions";
 import Reactivity from "./pages/Reactivity";
 import ReactivityBis from './pages/ReactivityBis';
 import Props from "./pages/Props";
+import Requests from "./pages/Requests";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/reactivity" element={<Reactivity/>} />
                 <Route path='/reactivity-bis' element={<ReactivityBis/>} />
                 <Route path='/props' element={<Props/>} />
+                <Route path='/req' element={<Requests/>} />
                 <Route path="*" element={<NotFound/>} />
 
             </Routes>

@@ -24,6 +24,9 @@ function Navigation() {
                 <li>
                     <NavLink to='/props'>Props</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/req'>Requêtes</NavLink>
+                </li>
             </ul>
         </nav>
     )

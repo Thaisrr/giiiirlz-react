@@ -121,13 +121,37 @@ async function loadUserById(id) {
         if(!user || !user.id) {
             console.error('---------- Aucun utilisateur⋅trice à afficher !');
         } else {
-            console.log(user)
+            //console.log(user);
+            return user;
         }
     } catch (e) {
         console.log('TODO : gérer l\'erreur ');
     }
 }
 
-loadUserById(1);
-loadUserById(2);
-loadUserById(15);
+//loadUserById(1);
+//loadUserById(2);
+//loadUserById(15);
+
+
+async function loadPostById(id) {
+    try {
+        const post_url = api_url + '/posts/';
+        const result = await fetch(post_url + id);
+        const post = await result.json();
+        console.log(post);
+        const user_response = await loadUserById(post.userId);
+        console.log(`[${user_response.name}] : ${post.title}`);
+    } catch (e) {
+        console.log('Oups, erreur')
+    }
+
+}
+
+loadPostById(1);
+
+
+function getPosts2(id) {
+    const post_url = api_url + '/posts/';
+
+}
